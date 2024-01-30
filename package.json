@@ -1,0 +1,25 @@
+{
+  "name": "@kne/cra-template-components",
+  "version": "0.1.0",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template"
+  ],
+  "description": "初始化一个远程组件项目",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kne-union/cra-template-components.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "bugs": {
+    "url": "https://github.com/kne-union/cra-template-components/issues"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ]
+}

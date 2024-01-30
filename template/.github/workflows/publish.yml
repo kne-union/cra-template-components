@@ -35,6 +35,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.KNE_PACKAGE_PUBLISH}}
         run: npm publish --access=public
-
-      - name: Sync To Cnpm
-        run: npm i -g cnpm && cnpm sync @kne/components-core
+      ## 请修改对应的packageName后取消以下命令的注释
+      #- name: Sync To Cnpm
+      #  run: npm i -g cnpm && cnpm sync packageName

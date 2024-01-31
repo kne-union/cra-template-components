@@ -10,12 +10,21 @@ const componentsCoreRemote = {
     remote: "components-core",
     url: "https://registry.npmmirror.com",
     tpl: "{{url}}/@kne%2f{{remote}}/{{version}}/files/build",
-    defaultVersion: '0.1.2',
+    defaultVersion: '0.1.3',
 };
 
 remoteLoaderPreset({
     remotes: {
-        default: componentsCoreRemote, 'components-core': componentsCoreRemote
+        default: componentsCoreRemote,
+        'components-core': componentsCoreRemote,
+        'components-name': process.env.NODE_ENV === 'development' ? {
+            remote: 'components-name', url: '/', tpl: '{{url}}'
+        } : {
+            remote: 'components-name',
+            url: 'https://registry.npmmirror.com',
+            tpl: '{{url}}/@kne%2f{{remote}}/{{version}}/files/build',
+            defaultVersion: process.env.DEFAULT_VERSION
+        }
     }
 });
 
@@ -28,7 +37,8 @@ export const ajax = axios.create({
 
 fetchPreset({
     ajax,
-    loading: <Spin delay={500} style={{position: 'absolute', left: '50%', padding: '10px', transform: 'translateX(-50%)'}}/>,
+    loading: <Spin delay={500}
+                   style={{position: 'absolute', left: '50%', padding: '10px', transform: 'translateX(-50%)'}}/>,
     error: null,
     empty: <Empty/>,
     transformResponse: (response) => {

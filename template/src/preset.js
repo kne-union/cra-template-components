@@ -17,6 +17,12 @@ remoteLoaderPreset({
     remotes: {
         default: componentsCoreRemote,
         'components-core': componentsCoreRemote,
+        'components-iconfont':{
+            remote: "components-iconfont",
+            url: "https://registry.npmmirror.com",
+            tpl: "{{url}}/@kne%2f{{remote}}/{{version}}/files/build",
+            defaultVersion: '0.1.1',
+        },
         'components-name': process.env.NODE_ENV === 'development' ? {
             remote: 'components-name', url: '/', tpl: '{{url}}'
         } : {

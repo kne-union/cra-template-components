@@ -9,8 +9,8 @@ window.PUBLIC_URL = process.env.PUBLIC_URL;
 const componentsCoreRemote = {
     remote: "components-core",
     url: "https://registry.npmmirror.com",
-    tpl: "{{url}}/@kne%2f{{remote}}/{{version}}/files/build",
-    defaultVersion: '0.1.3',
+    tpl: "{{url}}/@kne-components%2f{{remote}}/{{version}}/files/build",
+    defaultVersion: '0.1.12',
 };
 
 remoteLoaderPreset({
@@ -20,15 +20,15 @@ remoteLoaderPreset({
         'components-iconfont':{
             remote: "components-iconfont",
             url: "https://registry.npmmirror.com",
-            tpl: "{{url}}/@kne%2f{{remote}}/{{version}}/files/build",
-            defaultVersion: '0.1.1',
+            tpl: "{{url}}/@kne-components%2f{{remote}}/{{version}}/files/build",
+            defaultVersion: '0.1.3',
         },
         'components-name': process.env.NODE_ENV === 'development' ? {
             remote: 'components-name', url: '/', tpl: '{{url}}'
         } : {
             remote: 'components-name',
             url: 'https://registry.npmmirror.com',
-            tpl: '{{url}}/@kne%2f{{remote}}/{{version}}/files/build',
+            tpl: '{{url}}/@kne-components%2f{{remote}}/{{version}}/files/build',
             defaultVersion: process.env.DEFAULT_VERSION
         }
     }

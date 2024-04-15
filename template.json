@@ -5,7 +5,7 @@
       "init": "npm i --legacy-peer-deps",
       "create": "modules-dev-create",
       "lint-staged": "lint-staged",
-      "start": "cross-env PORT=3001 MODULES_DEV_PUBLIC_URL=/ craco start",
+      "start": "cross-env PORT=3001 COMPONENTS_NAME=components-name MODULES_DEV_PUBLIC_URL=/ craco start",
       "build": "cross-env COMPONENTS_NAME=components-name MODULES_DEV_PUBLIC_URL=/components-name  craco build",
       "test": "craco test --coverage",
       "prepare": "husky install"
